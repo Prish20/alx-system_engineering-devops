@@ -1,0 +1,2 @@
+#!/bin/badh
+export PATH="$PATH:/action"
