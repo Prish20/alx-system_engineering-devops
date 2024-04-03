@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+# Define usage function
+usage() {
+    echo "Usage: $0 PATH_TO_FILE IP USERNAME PATH_TO_SSH_KEY"
+    exit 1
+}
+
+# Check if all parameters are provided
+if [ "$#" -lt 4 ]; then
+    usage
+fi
+
+# Parameters
+PATH_TO_FILE=$1
+IP=$2
+USERNAME=$3
+PATH_TO_SSH_KEY=$4
+
+# Transfer file using SCP
+if scp -o StrictHostKeyChecking=no -i "$PATH_TO_SSH_KEY" "$PATH_TO_FILE" "$USERNAME@$IP":~/; then
+    echo "File transferred successfully."
+else
+    echo "Error transferring file."
+fi
