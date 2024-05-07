@@ -1,15 +1,13 @@
 #!/usr/bin/python3
-"""
-Script that queries subscribers on a given Reddit subreddit.
-"""
+
+"""Module to interact with Reddit API."""
 
 import requests
 
 
 def number_of_subscribers(subreddit):
     """
-    Queries the Reddit API to get the number
-    of subscribers for a given subreddit.
+    Return the number of subscribers for a given subreddit.
 
     Args:
         subreddit (str): The name of the subreddit.
