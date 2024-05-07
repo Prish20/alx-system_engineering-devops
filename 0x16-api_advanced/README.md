@@ -18,4 +18,10 @@ This project contains Python functions that interact with the Reddit API:
     - If the subreddit is invalid, it returns None.
     - The function is recursive and utilizes pagination to fetch all hot articles.
 
+4. `count_words`:
+    - Function prototype: `def count_words(subreddit, word_list)`
+    - Takes a subreddit name and a list of keywords.
+    - Returns a sorted count of given keywords (case-insensitive) from titles of all hot articles.
+    - The function is recursive and utilizes pagination to fetch all hot articles.
+
 All functions are written in compliance with PEP 8 guidelines and utilize the Requests module for HTTP requests.
