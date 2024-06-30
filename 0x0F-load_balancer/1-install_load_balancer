@@ -3,6 +3,7 @@
 # - Enables management via the init script.
 # - Distributes requests using a round-robin algorithm.
 
+sudo apt-get update -y && sudo apt-get upgrade -y
 sudo apt-get install -y haproxy
 
 echo "ENABLED=1" | sudo tee -a /etc/default/haproxy
@@ -17,8 +18,8 @@ backend clickbytes.tech_backend
     timeout connect  3000
     timeout server  30000
     balance roundrobin
-    server 319515-web-01 100.25.181.26:80 check
-    server 319515-web-02 54.164.112.54:80 check
+    server 319515-web-01 54.175.249.253:80 check
+    server 319515-web-02 54.146.72.50:80 check
 EOT
 
 sudo service haproxy restart
